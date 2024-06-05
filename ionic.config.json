@@ -1,0 +1,7 @@
+{
+  "name": "Gym-List",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
