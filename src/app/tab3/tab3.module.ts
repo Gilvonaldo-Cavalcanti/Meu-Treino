@@ -1,20 +1,21 @@
-import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 import { Tab3Page } from './tab3.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
-import { Tab3PageRoutingModule } from './tab3-routing.module';
+import { RouterModule } from '@angular/router';
+import { ModalCadastroMedidasComponent } from '../modal-cadastro-medidas/modal-cadastro-medidas.component';
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
-    Tab3PageRoutingModule
+    IonicModule,
+    RouterModule.forChild([{ path: '', component: Tab3Page }]) // Roteamento para Tab3Page
   ],
-  declarations: [Tab3Page]
+  declarations: [
+    Tab3Page,
+    ModalCadastroMedidasComponent
+  ]
 })
 export class Tab3PageModule {}

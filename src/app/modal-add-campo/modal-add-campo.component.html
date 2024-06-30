@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Adicionar Treino</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Campos Grupo Muscular e Dias de Treino -->
+  <form [formGroup]="grupoForm">
+    <!-- Campo Grupo Muscular -->
+    <ion-item>
+      <ion-label position="stacked">Grupo Muscular</ion-label>
+      <ion-select formControlName="grupoMuscular" (ionChange)="onGrupoMuscularChange($event)" interface="action-sheet">
+        <ion-select-option value="Costas e Bíceps">Costas e Bíceps</ion-select-option>
+        <ion-select-option value="Perna e Panturrilha">Perna e Panturrilha</ion-select-option>
+        <ion-select-option value="Peito e Tríceps">Peito e Tríceps</ion-select-option>
+        <ion-select-option value="Bíceps e Tríceps">Bíceps e Tríceps</ion-select-option>
+        <ion-select-option value="Ombro">Ombro</ion-select-option>
+        <ion-select-option value="Abdômen">Abdômen</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <!-- Campo Divisão -->
+    <ion-item>
+      <ion-label position="stacked">Divisão</ion-label>
+      <ion-select formControlName="diasTreino" interface="action-sheet">
+        <ion-select-option value="Treino A">Treino A</ion-select-option>
+        <ion-select-option value="Treino B">Treino B</ion-select-option>
+        <ion-select-option value="Treino C">Treino C</ion-select-option>
+        <ion-select-option value="Treino D">Treino D</ion-select-option>
+        <ion-select-option value="Treino E">Treino E</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </form>
+
+  <hr>
+
+  <!-- Campos de entrada dinâmicos -->
+  <form [formGroup]="campoForm">
+    <ion-item>
+      <ion-label position="stacked">Nome do Exercício</ion-label>
+      <ion-select formControlName="nomeExercicio" interface="action-sheet">
+        <ion-select-option *ngFor="let exercicio of exercicios" [value]="exercicio">{{ exercicio }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item button (click)="presentPicker('qtdSeries', 'Quant. de Séries', 1, 20)">
+      <ion-label position="stacked">Quant. de Séries</ion-label>
+      <ion-input formControlName="qtdSeries" type="number" readonly></ion-input>
+    </ion-item>
+    <ion-item button (click)="presentPicker('qtdRepeticoes', 'Quant. de Repetições', 1, 50)">
+      <ion-label position="stacked">Quant. de Repetições</ion-label>
+      <ion-input formControlName="qtdRepeticoes" type="number" readonly></ion-input>
+    </ion-item>
+    <ion-item button (click)="presentPicker('carga', 'Carga', 1, 200)">
+      <ion-label position="stacked">Carga</ion-label>
+      <ion-input formControlName="carga" type="number" readonly></ion-input>
+    </ion-item>
+
+    <!-- Botão para adicionar campo -->
+    <ion-button expand="block" (click)="adicionarCampo()">Adicionar Exercício</ion-button>
+  </form>
+
+  <!-- Lista de campos adicionados -->
+  <ion-list *ngIf="camposAdicionados.length > 0">
+    <ion-item *ngFor="let campo of camposAdicionados; let i = index">
+      <ion-label>{{ campo.nomeExercicio }}</ion-label>
+      <ion-label>{{ campo.qtdSeries }}</ion-label>
+      <ion-label>{{ campo.qtdRepeticoes }}</ion-label>
+      <ion-label>{{ campo.carga }}</ion-label>
+      <!-- Ícone de remover -->
+      <ion-icon name="close-circle" slot="end" (click)="removerCampo(i)"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botão de salvar -->
+  <ion-button expand="block" (click)="salvar()">Salvar</ion-button>
+</ion-content>

@@ -1,0 +1,33 @@
+/* Adicione isso ao seu arquivo tab3.page.scss */
+
+ion-list {
+    --ion-item-text-padding-start: 10px; /* Espaçamento interno à esquerda dos itens */
+  }
+  
+  ion-item-divider {
+    font-weight: bold; /* Deixa o texto do cabeçalho em negrito */
+  }
+  
+  ion-segment {
+    margin-bottom: 20px; /* Espaçamento abaixo do segment */
+  }
+  
+  ion-fab-button {
+    --background: #3880ff; /* Cor de fundo do botão flutuante */
+  }
+  
+  ion-fab-button ion-icon {
+    color: white; /* Cor do ícone do botão flutuante */
+  }
+  
+  .botao-cadastro-treinos {
+    --background: gray;
+    --background-activated: darkgray;
+    --background-focused: darkgray;
+    --background-hover: lightgray;
+  }
+
+  .centralizar-titulo {
+    text-align: center;
+  }
+  

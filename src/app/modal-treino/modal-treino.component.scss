@@ -1,0 +1,182 @@
+/* modal-treino.component.scss */
+:root {
+  --ion-color-primary: #4caf50; /* Defina a cor primária como verde */
+}
+/* Estilo da tabela de exercícios */
+.tabela-exercicios {
+    width: 100%;
+  }
+  
+  /* Estilo da linha de cabeçalho */
+  .header-row {
+    background-color: #333; /* Cor de fundo do cabeçalho */
+    color: #fff; /* Cor do texto do cabeçalho */
+    font-weight: bold;
+    border-radius: 10px; /* Bordas arredondadas no cabeçalho */
+    padding: 10px;
+  }
+  
+  /* Estilo da linha de dados */
+  .data-row {
+    border-bottom: 1px solid #444; /* Linhas entre os dados */
+  }
+  
+  /* Estilo das células */
+  ion-col {
+    padding: 12px 8px; /* Espaçamento interno */
+  }
+  
+  ion-col:first-child {
+    text-align: left;
+  }
+  
+  /* Estilo do ícone de conclusão */
+  .concluido-icon {
+    color: green; /* Cor do ícone quando concluído */
+  }
+  
+  /* Estilo do checkbox */
+  .checkbox-col {
+    text-align: center;
+  }
+  
+  /* Estilo do modal */
+  .modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .modal-header ion-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .modal-body {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo do cronômetro */
+  .cronometro,
+  .exercicios-concluidos {
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .cronometro h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .cronometro ion-button {
+    margin-top: 10px;
+  }
+
+ /* modal-treino.component.scss */
+
+/* Estilo da tabela de exercícios */
+.tabela-exercicios {
+    width: 100%;
+  }
+  
+  /* Estilo da linha de cabeçalho */
+  .header-row {
+    background-color: #333; /* Cor de fundo do cabeçalho */
+    color: #fff; /* Cor do texto do cabeçalho */
+    font-weight: bold;
+    border-radius: 10px; /* Bordas arredondadas no cabeçalho */
+    padding: 10px;
+  }
+  
+  /* Estilo da linha de dados */
+  .data-row {
+    border-bottom: 1px solid #444; /* Linhas entre os dados */
+  }
+  
+  /* Estilo das células */
+  ion-col {
+    padding: 12px 8px; /* Espaçamento interno */
+  }
+  
+  ion-col:first-child {
+    text-align: left;
+  }
+  
+  /* Estilo do ícone de conclusão */
+  .concluido-icon {
+    color: green; /* Cor do ícone quando concluído */
+  }
+  
+  /* Estilo do checkbox */
+  .checkbox-col {
+    text-align: center;
+  }
+  
+  /* Estilo da tabela de histórico de exercícios concluídos */
+  .exercicios-concluidos {
+    width: 100%;
+  }
+  
+  .exercicios-concluidos h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Cor do título */
+  }
+  
+  .exercicios-concluidos ion-list {
+    padding: 0;
+  }
+  
+  .exercicios-concluidos ion-item {
+    --padding-start: 0;
+    border-bottom: 1px solid #ccc; /* Linha entre os itens */
+  }
+  
+  .exercicios-concluidos ion-item:last-child {
+    border-bottom: none; /* Remover borda inferior do último item */
+  }
+  
+  .progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .progress-text {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #4caf50; /* Verde */
+  }
+  
+  ion-progress-bar {
+    width: 90%;
+    height: 20px;
+    --background: #e0e0e0; /* Cinza claro */
+    --buffer-background: #c8c8c8; /* Cinza */
+    --progress-background: #4caf50; /* Verde */
+    --border-radius: 10px;
+  }
+  
+  ::ng-deep ion-checkbox {
+    --background: white;
+    --border-radius: 4px;
+    --size: 24px;
+    --border-color: #555555;
+    --checkmark-color: white;
+  }
+ 
+  
+
+  

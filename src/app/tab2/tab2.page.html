@@ -1,17 +1,103 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!-- Botão do menu -->
+    </ion-buttons>
     <ion-title>
-      Tab 2
+      Progresso dos Treinos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<div class="ion-page" id="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+    <ion-grid>
+      <ion-row>
+        <div class="background-image-container">
+          <ion-row class="button-container">
+            <ion-col>
+              <button ion-button class="botao-treinar" (click)="presentAlert()">
+                <ion-icon name="barbell-sharp" color="black"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="button-container">
+            <ion-col>
+              <button ion-button class="botao-descansar" (click)="descansar()">
+                <ion-icon name="bed-sharp" color="black"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-row>
+
+      <ion-row>
+        <div class="conclusao-semanal">
+          <h5>Conclusão Semanal</h5>
+          <ion-row>
+            <ion-col *ngFor="let dia of [0, 1, 2, 3, 4, 5, 6]; let i = index">
+              <ion-icon [name]="getIconName(i)"
+              [color]="getIconColor(i)">
+              <!-- Adicione a condição de classe aqui -->
+              </ion-icon>
+              <ion-label>
+                <div class="dia">
+                  {{ getNomeDia(i) }}
+                </div>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div class="gamificacao">
+            <h5 class="ion-text-center">Gamificação</h5>
+            <ion-list>
+              <ion-item>
+                Nível:
+                <ion-note slot="end">{{ nivel }}</ion-note>
+              </ion-item>
+              <ion-item>
+                Pontuação:
+                <ion-note slot="end">{{ pontuacao }}</ion-note>
+              </ion-item>
+              <ion-item>
+                Ofensiva:
+                <ion-note slot="end">{{ ofensivas }}</ion-note>
+              </ion-item>
+              <ion-item>
+                Total de dias de treino:
+                <ion-note slot="end">{{ totalDiasTreino }}</ion-note>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Quantitativo por semana do ano.</ion-card-subtitle>
+            <ion-card-title>Treinos Realizados</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #pontuacaoCanvas></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-content>
+</div>

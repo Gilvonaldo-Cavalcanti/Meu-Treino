@@ -1,3 +1,45 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- Menu lateral -->
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <!-- Conteúdo do menu aqui -->
+      <ion-list>
+        <ion-menu-toggle auto-hide="true">
+
+          <ion-toolbar>
+            <ion-button expand="full" (click)="openAddExerciseModal()">Adicionar Exercícios</ion-button>
+          </ion-toolbar>
+          <ion-toolbar>
+            <ion-row>
+              <ion-col>
+              <ion-button (click)="exportarDados()">Exportar Dados</ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button (click)="openFileInput()">Importar Dados</ion-button>
+                <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden />
+              </ion-col>
+            </ion-row>
+          </ion-toolbar>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+
+    <!-- Footer no menu lateral -->
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button expand="full" (click)="confirmResetData()">Resetar Dados</ion-button>
+      </ion-toolbar>
+      <ion-toolbar>
+        <ion-button expand="full" (click)="openModalInfo()">Sobre</ion-button>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+
+  <!-- Main content -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

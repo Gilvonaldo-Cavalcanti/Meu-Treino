@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ treino?.grupoMuscular }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Cronômetro -->
+  <div class="cronometro">
+    <h2>{{ getFormattedTime() }}</h2>
+    <ion-button (click)="iniciarCronometro()" [disabled]="isRunning">Iniciar</ion-button>
+    <ion-button (click)="pausarCronometro()" [disabled]="!isRunning">Pausar</ion-button>
+    <ion-button (click)="finalizarTreino()">Finalizar Treino</ion-button>
+  </div>
+
+  <!-- Barra de progresso -->
+  <div class="progress-container">
+    <span class="progress-text">{{ (progresso * 100).toFixed(0) }}%</span>
+    <ion-progress-bar [value]="progresso"></ion-progress-bar>
+  </div>
+
+  <!-- Tabela de exercícios -->
+<ion-grid class="tabela-exercicios">
+  <!-- Cabeçalho da tabela -->
+  <ion-row class="header-row">
+    <ion-col>Exercício</ion-col>
+    <ion-col class="checkbox-col">Conclusão</ion-col>
+  </ion-row>
+
+  <!-- Dados da tabela -->
+  <ion-row *ngFor="let exercicio of treino?.camposExercicios" class="data-row">
+    <ion-col>
+      <div>{{ exercicio.nomeExercicio }}</div>
+      <div>Séries: {{ exercicio.qtdSeries }}</div>
+      <div>Repetições: {{ exercicio.qtdRepeticoes }}</div>
+      <div>Carga: {{ exercicio.carga }} Kg</div>
+    </ion-col>
+    <ion-col class="checkbox-col">
+      <ion-checkbox color="success" [(ngModel)]="exercicio.concluido" (ionChange)="marcarComoConcluido(exercicio)"></ion-checkbox>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+  
+
+ <!-- Histórico de exercícios concluídos -->
+<div *ngIf="exerciciosConcluidos.length > 0" class="exercicios-concluidos">
+  <h3>Exercícios Concluídos:</h3>
+  <ion-list>
+    <ion-item *ngFor="let ex of exerciciosConcluidos" class="data-row">
+      <ion-col>{{ ex.nomeExercicio }} - Tempo: {{ ex.tempo }}</ion-col>
+    </ion-item>
+  </ion-list>
+</div>
+
+</ion-content>

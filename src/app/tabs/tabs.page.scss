@@ -1,1 +1,11 @@
 
+ion-tab-button ion-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+  /* Cor de fundo para o ícone da aba ativa */
+  ion-tab-button.tab-selected ion-icon {
+    background-color: #bebebe; 
+  }

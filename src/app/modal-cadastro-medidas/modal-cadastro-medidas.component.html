@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de Medidas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cancelar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="salvar()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Data</ion-label>
+        <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="avaliacao.data" name="data"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Ombro</ion-label>
+        <ion-input [(ngModel)]="avaliacao.ombro" name="ombro" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Tórax</ion-label>
+        <ion-input [(ngModel)]="avaliacao.torax" name="torax" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Abdomen</ion-label>
+        <ion-input [(ngModel)]="avaliacao.abdomen" name="abdomen" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Braço Direito</ion-label>
+        <ion-input [(ngModel)]="avaliacao.bracoDireito" name="bracoDireito" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Braço Esquerdo</ion-label>
+        <ion-input [(ngModel)]="avaliacao.bracoEsquerdo" name="bracoEsquerdo" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Antebraço Direito</ion-label>
+        <ion-input [(ngModel)]="avaliacao.antebracoDireito" name="antebracoDireito" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Antebraço Esquerdo</ion-label>
+        <ion-input [(ngModel)]="avaliacao.antebracoEsquerdo" name="antebracoEsquerdo" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Coxa Direita</ion-label>
+        <ion-input [(ngModel)]="avaliacao.coxaDireita" name="coxaDireita" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Coxa Esquerda</ion-label>
+        <ion-input [(ngModel)]="avaliacao.coxaEsquerda" name="coxaEsquerda" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Perna Direita</ion-label>
+        <ion-input [(ngModel)]="avaliacao.pernaDireita" name="pernaDireita" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Perna Esquerda</ion-label>
+        <ion-input [(ngModel)]="avaliacao.pernaEsquerda" name="pernaEsquerda" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Peso</ion-label>
+        <ion-input [(ngModel)]="avaliacao.peso" name="peso" type="number" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-toolbar>
+      <ion-button expand="full" type="submit">Salvar</ion-button>
+    </ion-toolbar>
+  </form>
+</ion-content>

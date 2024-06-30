@@ -35,3 +35,64 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* global.scss */
+
+/* Definir variáveis de estilo */
+:root {
+    --background-color: #1e1e1e;  // Cor de fundo preta
+    --primary-color: #ffffff;     // Cor principal (branco)
+    --accent-color: #72716f;      // Cor de destaque (amarelo)
+  }
+  
+  /* Estilos globais */
+  * {
+    font-family: Arial, sans-serif;  // Fonte padrão
+    color: var(--primary-color);
+  }
+  
+  body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  ion-content {
+    --ion-background-color: var(--background-color);
+  }
+  
+  ion-toolbar {
+    --background: var(--background-color);
+    --color: var(--primary-color);
+  }
+  
+  ion-button {
+    --background: var(--accent-color);
+    --color: var(--primary-color);
+    --border-radius: 20px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+  }
+  
+  /* Estilizar outros componentes conforme necessário */
+  
+  ion-checkbox {
+    --background: white;
+    --border-radius: 4px;
+    --size: 24px;
+    --border-color: #4caf50;
+    --background-checked: #4caf50;
+    --checkmark-color: white;
+  }
+
+  ::ng-deep ion-checkbox {
+    --background: white;
+    --border-radius: 4px;
+    --size: 24px;
+    --border-color: #4caf50;
+    --background-checked: #4caf50;
+    --checkmark-color: white;
+  }
+
+  
+  
